@@ -3,6 +3,7 @@ import Tabletop from 'tabletop'
 import DataTable from 'react-data-table-component';
 import Nav from './Nav';
 import Hderimg from './header.jpg'
+import CountUp from "react-countup";
 
 const Popup = ({tx,ty,close})=>{
     return (   <>
@@ -26,7 +27,7 @@ function Homepage() {
 
 const CustomLoader = () => (
     <div style={{ padding: '24px' }}>
-      <div>Loading/กำลังโหลด</div>
+      <div className="loader simple-circle"></div>
     </div>
   );
 const textcut = (d)=>{
@@ -126,20 +127,25 @@ const textcut = (d)=>{
   return (
 
 
+
     <div className="homepage">
         {ispopup && <Popup tx={popupdata.tx} ty={popupdata.ty} close={setispopup}/>}
         
         <Nav/>
         <div className="hero" style={{backgroundImage: `URL(${Hderimg})`}}>
+            <p>ทุกความคิดเห็น ทุกข้อเสนอแนะ จะไม่สูญเปล่า</p>
             <h1>ขณะนี้มีความคิดเห็นทั้งหมด</h1>
-            <h2> {panding ? "loading" : `${comdatas.length}` } {panding === false && <span className="num-back">ความคิดเห็น</span>} </h2>
+            <h2> <CountUp end={comdatas.length}></CountUp></h2>
+            <div className="num"><span className="num-back">ความคิดเห็น</span></div>
         </div>
         
         <div className="table-padding">
         <div className="wrapper">
-        <input type="text" placeholder="ค้นหา" className="search"  onChange={e=>{setsearchv(e.target.value)}} />
-      <DataTable
-        title="ความเห็นและข้อเสนอแนะ"
+        <div className="headertable">
+          <h2>ความเห็นและข้อเสนอแนะจากผู้อื่น</h2>
+          <input type="text" placeholder="ค้นหาความคิดเห็นของผู้อื่น" className="search"  onChange={e=>{setsearchv(e.target.value)}} />
+        </div>
+        <DataTable
         columns={columns}
         data={filtervalue}
         progressPending={panding}
