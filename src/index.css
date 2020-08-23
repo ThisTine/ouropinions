@@ -97,7 +97,7 @@ body {
   color: black;
   border-radius: 10px;
   background-color: #f6e63e;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .nav-btn:hover{
   color: white;
@@ -120,6 +120,7 @@ body {
   color: white;
   background-size: cover;
   background-position: center;
+  margin: auto;
 }
 .hero>h2{
   font-size: 6rem;
@@ -141,26 +142,30 @@ code {
     monospace;
 }
 .search{
-  width: 100%;
+  width: 60%;
   border: none;
-  border-bottom: 1px solid rgb(66, 66, 66);
-  transition: all 0.5s;
-  font-size: 1.5rem;
+  transition: all 0.2s;
+  font-size: 1rem;
   margin: 20px 0;
+  text-align: center;
 }
 .tablet>div>div>div>div{
   padding: 10px 0;
 }
 .tablet>div>div>div>div:hover {
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 .tablet>div>div>div>div>div {
   font-size: 1.5rem;
 }
 .search:focus{
   outline: none;
-  border-bottom: 1px solid rgb(255, 0, 0);
+}
+.headertable {
+  text-align: center;
+padding: 10px;
+margin-top: 50px;
 }
 
 @media (max-width: 575.98px) { 
@@ -216,6 +221,9 @@ The loaders use CSS custom properties (variables) to control the attributes of t
 	flex-grow: 0;
 	flex-shrink: 0;
 }
+
+
+
 /*
 In order to get optimal results, please only change the 
 variables above and don't change anything in the actual loader code

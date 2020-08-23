@@ -133,16 +133,20 @@ const textcut = (d)=>{
         
         <Nav/>
         <div className="hero" style={{backgroundImage: `URL(${Hderimg})`}}>
+            <p>ทุกความคิดเห็น ทุกข้อเสนอแนะ จะไม่สูญเปล่า</p>
             <h1>ขณะนี้มีความคิดเห็นทั้งหมด</h1>
-            <h2> {panding ? "กำลังรับข้อมูล" : <CountUp end={comdatas.length}></CountUp>} </h2>
-            <div className="num">{panding === false && <span className="num-back">ความคิดเห็น</span>}</div>
+            <h2> <CountUp end={comdatas.length}></CountUp></h2>
+            <div className="num"><span className="num-back">ความคิดเห็น</span></div>
         </div>
         
         <div className="table-padding">
         <div className="wrapper">
-        <input type="text" placeholder="ค้นหา" className="search"  onChange={e=>{setsearchv(e.target.value)}} />
-      <DataTable
-        title="ความเห็นและข้อเสนอแนะ"
+        <div className="headertable">
+          <i className="fas fa-users fa-5x"></i>
+          <h2>ความเห็นและข้อเสนอแนะจากผู้อื่น</h2>
+          <input type="text" placeholder="ค้นหาความคิดเห็นของผู้อื่น" className="search"  onChange={e=>{setsearchv(e.target.value)}} />
+        </div>
+        <DataTable
         columns={columns}
         data={filtervalue}
         progressPending={panding}
