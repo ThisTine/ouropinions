@@ -124,7 +124,7 @@ body {
 .hero>h2{
   font-size: 6rem;
 }
-.hero>h2>span{
+.hero>.num>span{
   font-size: 1rem;
   position: relative;
   top: 10px;
@@ -190,13 +190,57 @@ code {
     flex-direction: column;
     justify-content: center;
   }
-  .hero>h2>span{
+  .hero>.num>span{
     display: block;
     margin: auto;
     width: fit-content;
     right: 0;
   }
  }
+
+ 
+/*
+The loaders use CSS custom properties (variables) to control the attributes of the loaders
+*/
+:root{
+	--loader-width: 70px;
+	--loader-height: 70px;
+	--loader-color-primary: #27ae60;
+	--loader-color-secondary: #eee;
+	--line-width: 3px;
+	--animation-duration: 2s;
+	--loader-initial-scale: 0.1;
+}
+.loader,.loader:before,.loader:after{
+	box-sizing: border-box;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+/*
+In order to get optimal results, please only change the 
+variables above and don't change anything in the actual loader code
+*/
+	
+	
+
+@keyframes circle-loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader.simple-circle {
+    transform-origin: center center;
+    border: var(--line-width, 4px) solid var(--loader-color-secondary, #fff);
+    border-right-color: var(--loader-color-primary, #00f);
+    width: var(--loader-width, 100px);
+    height: var(--loader-height, 100px);
+    border-radius: 50%;
+    animation: circle-loader var(--animation-duration, 1s) infinite ease-out;
+}
 
  /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {  

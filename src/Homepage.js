@@ -3,6 +3,7 @@ import Tabletop from 'tabletop'
 import DataTable from 'react-data-table-component';
 import Nav from './Nav';
 import Hderimg from './header.jpg'
+import CountUp from "react-countup";
 
 const Popup = ({tx,ty,close})=>{
     return (   <>
@@ -26,7 +27,7 @@ function Homepage() {
 
 const CustomLoader = () => (
     <div style={{ padding: '24px' }}>
-      <div>Loading/กำลังโหลด</div>
+      <div className="loader simple-circle"></div>
     </div>
   );
 const textcut = (d)=>{
@@ -126,13 +127,15 @@ const textcut = (d)=>{
   return (
 
 
+
     <div className="homepage">
         {ispopup && <Popup tx={popupdata.tx} ty={popupdata.ty} close={setispopup}/>}
         
         <Nav/>
         <div className="hero" style={{backgroundImage: `URL(${Hderimg})`}}>
             <h1>ขณะนี้มีความคิดเห็นทั้งหมด</h1>
-            <h2> {panding ? "loading" : `${comdatas.length}` } {panding === false && <span className="num-back">ความคิดเห็น</span>} </h2>
+            <h2> {panding ? "กำลังรับข้อมูล" : <CountUp end={comdatas.length}></CountUp>} </h2>
+            <div className="num">{panding === false && <span className="num-back">ความคิดเห็น</span>}</div>
         </div>
         
         <div className="table-padding">
