@@ -142,7 +142,6 @@ const textcut = (d)=>{
         <div className="table-padding">
         <div className="wrapper">
         <div className="headertable">
-          <i className="fas fa-users fa-5x"></i>
           <h2>ความเห็นและข้อเสนอแนะจากผู้อื่น</h2>
           <input type="text" placeholder="ค้นหาความคิดเห็นของผู้อื่น" className="search"  onChange={e=>{setsearchv(e.target.value)}} />
         </div>
