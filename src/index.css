@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+*{
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html{
+  background: #fefefe;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.nav{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.555),rgba(0, 0, 0, 0.349),rgba(0, 0, 0, 0));
+  padding: 20px 0;
+  z-index: 999;
+}
+.popup-bg{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.445);
+  z-index: 555;
+  animation-name: opc ;
+  animation-duration: 0.2s;
+}
+.popup{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 666;
+  align-items: center;
+  animation-name: opc ;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+@keyframes opc{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
+.popup-content{
+  min-height: 30%;
+  max-height: 70%;
+  width: 70%;
+  background-color: #fefefe;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+  border-radius: 7px;
+  z-index: 777;
+}
+.popup-close{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.popup-close:hover{
+  cursor: pointer;
+
+}
+.popuptype{
+  font-size: 2rem;
+  border-bottom: 2px solid rgb(87, 86, 86);
+}
+.popuptext{
+  max-height: calc(60vh - 20px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  padding: 15px 10px;
+  
+}
+
+
+.btn{
+  border: none;
+  text-decoration: none;
+  color: white;
+}
+.nav-btn{
+  padding: 10px 20px;
+  color: black;
+  border-radius: 10px;
+  background-color: #f6e63e;
+  transition: 0.5s;
+}
+.nav-btn:hover{
+  color: white;
+  background-color: #812211;
+}
+.nav-wrapper{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table-padding{
+  display: flex;
+  padding: 0 0 60px 0;
+  justify-content: center;
+}
+.hero{
+  text-align: center;
+  padding: 100px 0;
+  color: white;
+  background-size: cover;
+  background-position: center;
+}
+.hero>h2{
+  font-size: 6rem;
+}
+.hero>h2>span{
+  font-size: 1rem;
+  position: relative;
+  top: 10px;
+  right: 10px;
+  background-color: green;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.wrapper{
+  width: 70%;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.search{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(66, 66, 66);
+  transition: all 0.5s;
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+.tablet>div>div>div>div{
+  padding: 10px 0;
+}
+.tablet>div>div>div>div:hover {
+  cursor: pointer;
+  transition: 0.5s;
+}
+.tablet>div>div>div>div>div {
+  font-size: 1.5rem;
+}
+.search:focus{
+  outline: none;
+  border-bottom: 1px solid rgb(255, 0, 0);
+}
+
+@media (max-width: 575.98px) { 
+  .nav-right{font-size: 0.6rem;}
+  .nav-left{font-size: 0.7rem;}
+  .wrapper{
+    width: 95%;
+    
+  }
+  .search{
+    margin: 10px 0;
+  }
+  .popuptype{
+    font-size: 1.25rem;
+  }
+  .popuptext{
+    font-size: 1.25rem;
+  }
+  .popup-content{
+    width: 85%;
+  }
+  .tablet>div>div>div>div>div {
+    font-size: 1rem;
+  }
+  .hero>h2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero>h2>span{
+    display: block;
+    margin: auto;
+    width: fit-content;
+    right: 0;
+  }
+ }
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {  
+  .wrapper{
+    width: 90%;
+  }
+  .popuptype{
+    font-size: 1.25rem;
+  }
+  .popuptext{
+    font-size: 1.25rem;
+  }
+  .popup-content{
+    width: 85%;
+  }
+  .tablet>div>div>div>div>div {
+    font-size: 1rem;
+  }
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  .wrapper{
+    width: 85%;
+  }
+  .tablet>div>div>div>div>div {
+    font-size: 1.1rem;
+  }
+ }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .wrapper{
+    width: 70%;
+  }
+ }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }

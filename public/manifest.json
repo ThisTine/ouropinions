@@ -1,0 +1,20 @@
+{
+  "short_name": "ความเห็นและข้อเสนอแนะเรื่องภายในโรงเรียนเพื่อใช้ในการอภิปราย",
+  "name": "ความเห็นและข้อเสนอแนะเรื่องภายในโรงเรียนเพื่อใช้ในการอภิปราย",
+  "icons": [
+    {
+      "src": "ogimage3.jpg",
+      "type": "image/jpg",
+      "sizes": "1200x630"
+    },
+    {
+      "src": "profile.jpg",
+      "type": "image/jpg",
+      "sizes": "902x902"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
