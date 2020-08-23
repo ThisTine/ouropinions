@@ -42,8 +42,7 @@ body {
   z-index: 666;
   align-items: center;
   animation-name: opc ;
-  animation-duration: 0.5s;
-  animation-delay: 0.2s;
+  animation-duration: 0.2s;
   opacity: 0;
   animation-fill-mode: forwards;
 }
@@ -82,7 +81,7 @@ body {
   max-height: calc(60vh - 20px);
   overflow-y: auto;
   box-sizing: border-box;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 15px 10px;
   
 }
@@ -156,9 +155,10 @@ code {
 .tablet>div>div>div>div:hover {
   cursor: pointer;
   transition: 0.2s;
+  border-top: 0;
 }
 .tablet>div>div>div>div>div {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .search:focus{
   outline: none;
